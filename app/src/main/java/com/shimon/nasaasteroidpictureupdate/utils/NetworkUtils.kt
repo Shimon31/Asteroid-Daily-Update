@@ -13,17 +13,21 @@ fun parseAsteroidJsonResult(jsonObject: JSONObject): ArrayList<Asteroid>? {
     val asteroidList = ArrayList<Asteroid>()
     val next7Days = get7DaysList()
 
-    for(dateFormat in next7Days){
+    for (dateFormat in next7Days) {
 
-        if (nearEarthObjects.has(dateFormat)){
+        if (nearEarthObjects.has(dateFormat)) {
 
             val dateWiseData = nearEarthObjects.getJSONArray(dateFormat)
 
 
-            for(index in 0 until  dateWiseData.length()){
+            for (index in 0 until dateWiseData.length()) {
 
-                 val asteroidJson = dateWiseData.getJSONObject(index)
-///next day start from here
+                val asteroidJson = dateWiseData.getJSONObject(index)
+                val id = asteroidJson.getJSONObject("id")
+                val codeName = asteroidJson.getJSONObject("name")
+                val closeApproachDate = asteroidJson
+                    .getJSONArray("close_approach_data")
+                    .getJSONObject(0).getString("close_approach_date")
 
             }
 

@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Asteroid(
 
-    val id: String,
+    val id: Long,
     val codeName: String,
     val closeApproachDate: String,
     val absoluteMagnitude: Double,
